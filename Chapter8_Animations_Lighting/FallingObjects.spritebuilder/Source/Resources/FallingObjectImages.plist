@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FallingObjectTypeBadImages</key>
+	<array>
+		<string>assets/fan.png</string>
+		<string>assets/speaker.png</string>
+		<string>assets/television.png</string>
+		<string>assets/radio.png</string>
+		<string>assets/toaster.png</string>
+	</array>
+	<key>FallingObjectTypeGoodImages</key>
+	<array>
+		<string>assets/beet.png</string>
+		<string>assets/broccoli.png</string>
+		<string>assets/carrot.png</string>
+		<string>assets/corn.png</string>
+		<string>assets/garlic.png</string>
+		<string>assets/lettuce.png</string>
+		<string>assets/peas.png</string>
+		<string>assets/potato.png</string>
+		<string>assets/stringbeans.png</string>
+		<string>assets/tomato.png</string>
+	</array>
+</dict>
+</plist>
