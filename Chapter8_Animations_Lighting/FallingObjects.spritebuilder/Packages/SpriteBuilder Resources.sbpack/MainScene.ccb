@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>55</integer>
+	<integer>112</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -588,7 +588,7 @@
 				<key>displayName</key>
 				<string>CCEffectNode</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>effectNode</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>

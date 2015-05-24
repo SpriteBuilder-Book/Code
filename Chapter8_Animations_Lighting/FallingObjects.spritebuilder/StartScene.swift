@@ -12,6 +12,7 @@ class StartScene: CCNode {
   
   weak var scrollView: CCScrollView!
   weak var playButton: CCButton!
+  
   var selectedGameMode: MainScene.GameModeSelection = .Endless
   
   //MARK: Initialization

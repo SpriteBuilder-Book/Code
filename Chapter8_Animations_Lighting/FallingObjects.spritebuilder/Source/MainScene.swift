@@ -12,6 +12,7 @@ class MainScene: CCNode {
 
   weak var pot: Pot!
   weak var gameOverPopUpHighscoreLabel: CCLabelTTF!
+  weak var effectNode: CCEffectNode!
   
   private var fallingObjects = [FallingObject]()
   private let fallingSpeed = 100.0
@@ -72,7 +73,7 @@ class MainScene: CCNode {
     fallingObject.position = spawnPosition
     fallingObject.zOrder = DrawingOrder.GameplayElements.rawValue
     
-    addChild(fallingObject)
+    effectNode.addChild(fallingObject)
   }
 
   func gameOver() {
@@ -182,10 +183,25 @@ class MainScene: CCNode {
   func performCaughtStep(fallingObject:FallingObject) {
     // if the object was caught, remove it as soon as soon as it is entirely contained in the pot
     if (CGRectContainsRect(pot.catchContainer.boundingBox(), fallingObject.boundingBox())) {
-      gameMode?.gameplay(self, caughtFallingObject:fallingObject)
+      gameMode?.gameplay(self, caughtFallingObject: fallingObject)
       fallingObject.removeFromParent()
       let fallingObjectIndex = find(fallingObjects, fallingObject)!
       fallingObjects.removeAtIndex(fallingObjectIndex)
+      
+      if (fallingObject.type == .Good) {
+        let particleEffect = CCBReader.load("CaughtParticleEffect") as! CCParticleSystem
+        particleEffect.autoRemoveOnFinish = true
+        particleEffect.positionType = CCPositionType(
+          xUnit: .Normalized,
+          yUnit: .Points,
+          corner: .TopLeft
+        )
+        particleEffect.position = ccp(0.5, 20)
+        pot.potTop.addChild(particleEffect)
+        pot.animationManager.runAnimationsForSequenceNamed("CatchAnimation", tweenDuration: 0.1)
+      } else if (fallingObject.type == .Bad) {
+        pot.animationManager.runAnimationsForSequenceNamed("CatchNegativeAnimation", tweenDuration: 0.1)
+      }
     }
   }
   
