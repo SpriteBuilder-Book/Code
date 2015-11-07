@@ -8,7 +8,6 @@
 
 import Foundation
 
-@objc(EndlessGameMode)
 class EndlessGameMode: NSObject, GameMode {
   
   var healthBar: CCNode!

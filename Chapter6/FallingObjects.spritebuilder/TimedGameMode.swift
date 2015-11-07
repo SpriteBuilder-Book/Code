@@ -8,7 +8,6 @@
 
 import Foundation
 
-@objc(TimedGameMode)
 class TimedGameMode: NSObject, GameMode {
   var timeLabel: CCLabelTTF!
   var pointsLabel: CCLabelTTF!
