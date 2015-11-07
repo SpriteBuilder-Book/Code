@@ -8,8 +8,7 @@
 
 import Foundation
 
-@objc(TimedGameMode)
-class TimedGameMode: GameMode {
+class TimedGameMode: NSObject, GameMode {
 
   var timeLabel: CCLabelTTF!
   var pointsLabel: CCLabelTTF!
@@ -34,7 +33,9 @@ class TimedGameMode: GameMode {
     }
   }
   
-  init() {
+  override init() {
+    super.init()
+    
     userInterface = CCBReader.load("TimedModeUI", owner:self)
     updatePointsDisplay(points)
     updateTimeDisplay(time)

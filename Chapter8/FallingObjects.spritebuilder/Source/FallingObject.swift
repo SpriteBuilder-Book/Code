@@ -63,7 +63,7 @@ class FallingObject: CCSprite {
     
     effect = CCEffectLighting()
     
-    let imageNameSplit = split(imageName!) { $0 == "." }
+    let imageNameSplit = imageName!.characters.split { $0 == "." }
     let imageNameFirstPart = imageNameSplit[0]
     let normalMapName = "\(imageNameFirstPart)_NRM.png"
     
