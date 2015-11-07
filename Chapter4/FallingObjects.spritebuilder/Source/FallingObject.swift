@@ -49,7 +49,7 @@ class FallingObject: CCSprite {
       imageName = FallingObject.imageNames.bad[randomIndex]
     }
         
-    let spriteFrame = CCSpriteFrame(imageNamed: imageName) as CCSpriteFrame
+    let spriteFrame = CCSpriteFrame(imageNamed: imageName)
     super.init(texture: spriteFrame.texture, rect: spriteFrame.rect, rotated: false)
     
     anchorPoint = ccp(0,0)
