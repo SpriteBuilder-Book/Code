@@ -223,6 +223,13 @@ static NSString* vertBase =
     return [super init];
 }
 
+// Hack to get around a compiler problem with the direct obj.verts = <a CCSpriteVertexes object> that corrupts the stack and crashes hard on 32 bit devices
+// See http://forum.cocos2d-spritebuilder.org/t/cceffectbrightness-crashed-on-iphone4s/17124
+- (void)verts_setter:(CCSpriteVertexes*)svp
+{
+    _verts = *svp;
+}
+
 @end
 
 
