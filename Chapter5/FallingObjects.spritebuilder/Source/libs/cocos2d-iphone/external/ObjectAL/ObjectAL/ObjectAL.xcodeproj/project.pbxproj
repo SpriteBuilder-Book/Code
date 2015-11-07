@@ -941,6 +941,7 @@
 		CBBAA821171D05AA009B955F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Karl Stenerud";
 			};
