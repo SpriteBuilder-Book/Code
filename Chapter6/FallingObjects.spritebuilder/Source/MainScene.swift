@@ -153,7 +153,7 @@ class MainScene: CCNode {
     if (yPositionInCatchContainer) {
       if (xPositionLargerThanLeftEdge && xPositionSmallerThanRightEdge) {
         // caught the object
-        let fallingObjectWorldPosition = fallingObject.parent.convertToWorldSpace(fallingObject.positionInPoints)
+        let fallingObjectWorldPosition = fallingObject.parent!.convertToWorldSpace(fallingObject.positionInPoints)
         fallingObject.removeFromParent()
         fallingObject.positionInPoints = pot.convertToNodeSpace(fallingObjectWorldPosition)
         pot.addChild(fallingObject)
@@ -171,7 +171,7 @@ class MainScene: CCNode {
       gameMode?.gameplay(self, droppedFallingObject:fallingObject)
       // if object is below screen, remove it
       fallingObject.removeFromParent()
-      let fallingObjectIndex = find(fallingObjects, fallingObject)!
+      let fallingObjectIndex = fallingObjects.indexOf(fallingObject)!
       fallingObjects.removeAtIndex(fallingObjectIndex)
       // play sound effect
       animationManager.runAnimationsForSequenceNamed("DropSound")
@@ -183,7 +183,7 @@ class MainScene: CCNode {
     if (CGRectContainsRect(pot.catchContainer.boundingBox(), fallingObject.boundingBox())) {
       gameMode?.gameplay(self, caughtFallingObject:fallingObject)
       fallingObject.removeFromParent()
-      let fallingObjectIndex = find(fallingObjects, fallingObject)!
+      let fallingObjectIndex = fallingObjects.indexOf(fallingObject)!
       fallingObjects.removeAtIndex(fallingObjectIndex)
     }
   }

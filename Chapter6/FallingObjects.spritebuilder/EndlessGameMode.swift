@@ -9,7 +9,7 @@
 import Foundation
 
 @objc(EndlessGameMode)
-class EndlessGameMode: GameMode {
+class EndlessGameMode: NSObject, GameMode {
   
   var healthBar: CCNode!
   var survivedLabel: CCLabelTTF!
@@ -35,7 +35,9 @@ class EndlessGameMode: GameMode {
       }
   }
   
-  init() {
+  override init() {
+    super.init()
+    
     userInterface = CCBReader.load("EndlessModeUI", owner:self)
   }
   
