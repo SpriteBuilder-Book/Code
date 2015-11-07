@@ -129,6 +129,8 @@ typedef NS_ENUM(NSUInteger, CCEffectTexCoordMapping)
 @property (nonatomic, strong) NSDictionary* uniformTranslationTable;
 @property (nonatomic, assign) BOOL needsClear;
 
+- (void)verts_setter:(CCSpriteVertexes*)svp;
+
 @end
 
 
